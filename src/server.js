@@ -21,6 +21,10 @@ const QuestionSchema = new mongoose.Schema({
 
 const Question = mongoose.model('Question', QuestionSchema);
 
+app.get('/', (req, res) => {
+  res.send('Servidor de chatbot en funcionamiento');
+});
+
 app.post('/api/chatbot', async (req, res) => {
   const userQuestion = req.body.question;
   if (typeof userQuestion !== 'string' || userQuestion.trim() === '') {
