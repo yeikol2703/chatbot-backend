@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI = 'mongodb+srv://yeikolvillalobos27:njF0ZY92bKQncSVX@chatbot.otz5rfx.mongodb.net/?retryWrites=true&w=majority&appName=chatbot';
+const mongoURI = process.env.mongoURI;
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const QuestionSchema = new mongoose.Schema({
